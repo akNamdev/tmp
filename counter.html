@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>counter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      .main {
+        width: 100%;
+        height: 100vh;
+        background-color: blueviolet;
+        text-align: center;
+      }
+      .inner {
+        width: 60%;
+        margin: auto;
+        color: #fff;
+        text-align: center;
+      }
+      .inner h1 {
+        padding: 40px;
+        margin-bottom: 30px;
+      }
+      .inner p {
+        font-size: 13px;
+        line-height: 22px;
+        padding-bottom: 100px;
+      }
+      .row {
+        width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* position: absolute;
+        top: 60%;
+        left: 10%; */
+      }
+      .col {
+        flex-basis: 22%;
+        text-align: center;
+      }
+      .counterBox {
+        width: 100%;
+        background: #8d0909;
+        height: 100%;
+        padding: 20px 0px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px -4px #ccc;
+      }
+      .counterBox .fa-solid {
+        font-size: 30px;
+        padding: 20px;
+      }
+      .blank {
+        width: 100%;
+        height: 200vh;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="blank"></div>
+    <div class="main">
+      <div class="inner">
+        <h1>About This</h1>
+        <p>
+          We are the leading Real Estate Developer in Rajasthan, offering an
+          unparalleled property development experience with a proven track
+          record of excellence and a commitment to
+        </p>
+        <div class="row">
+          <div class="col">
+            <div class="counterBox">
+              <i class="fa-solid fa-plane"></i>
+              <h2 class="number" data-target="1000">00</h2>
+              <h4>destination</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counterBox">
+              <i class="fa-solid fa-coffee"></i>
+              <h2 class="number" data-target="5000">00</h2>
+              <h4>destination</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counterBox">
+              <i class="fa-solid fa-user"></i>
+              <h2 class="number" data-target="7000">00</h2>
+              <h4>destination</h4>
+            </div>
+          </div>
+          <div class="col">
+            <div class="counterBox">
+              <i class="fa-solid fa-home"></i>
+              <h2 class="number" data-target="3000">00</h2>
+              <h4>destination</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blank"></div>
+  </body>
+  <script>
+    const number = document.querySelectorAll(".number");
+    const speed = 100;
+    number.forEach((element) => {
+      incNumber(element)
+    });
+    function incNumber(elem) {
+      let text = +elem.innerText;
+      const value = +elem.getAttribute("data-target");
+      const inc = value / speed;
+      if (text < value) {
+        elem.innerText = inc+text;
+
+        setTimeout(() => {
+          incNumber(elem);
+        }, 20);
+      } else {
+        elem.innerText = value;
+      }
+    }
+
+    window.addEventListener('scroll',()=>{
+      const topDistance = row.offsetTop; 
+      const scrollCount = pageYOffset;
+      if (scrollCount > topDistance)
+       {
+        console.log( )
+       }
+    
+    })
+  </script>
+</html>
